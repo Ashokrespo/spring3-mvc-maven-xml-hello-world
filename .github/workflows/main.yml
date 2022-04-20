@@ -10,8 +10,19 @@ jobs:
   build:
 
     runs-on: self-hosted
+	-uses: actions/checkout@v1
+	-name: Run a one-line script
+	run: echo Hello, world!
+	-name: java version
+	run: java -version
+	-name: mvn version 
+	run: mvn --version
+	-name: python version
+	run: python --version
+	-name: docker version
+	run: docker -v
 
-    steps:
+    	steps:
     - uses: actions/checkout@v2
     - name: Build with Maven
       run: mvn package
